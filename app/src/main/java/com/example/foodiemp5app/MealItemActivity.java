@@ -15,8 +15,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-public class MealItemActivity extends AppCompatActivity {
-
+public class MealItemActivity extends AppCompatActivity
+{
     private LinearLayout linearLayout;
     private TextView title;
     private TextView description;
@@ -24,7 +24,8 @@ public class MealItemActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);//will hide the title
         getSupportActionBar().hide();
@@ -35,33 +36,12 @@ public class MealItemActivity extends AppCompatActivity {
         description = findViewById(R.id.meal_activity_desc);
         image = findViewById(R.id.meal_activity_image);
 
-
-
         Intent intent = getIntent();
         String mTitle = intent.getStringExtra("title");
         String mDesc = intent.getStringExtra("description");
         int mId = intent.getIntExtra("imageId", 0);
         title.setText(mTitle);
         description.setText(mDesc);
-
-//        linearLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent sharedIntent = new Intent(MealItemActivity.this, MainActivity.class);
-//
-//                Pair[] pairs = new Pair[3];
-//                pairs[0]= new Pair<View, String>(image, "imageTransition");
-//                pairs[1]= new Pair<View, String>(title, "titleTransition");
-//                pairs[2]= new Pair<View, String>(description, "descTransition");
-//
-//                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MealItemActivity.this, pairs);
-//
-//                startActivity(sharedIntent, options.toBundle());
-//
-//            }
-//        });
-
-
     }
 }
 

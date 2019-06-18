@@ -1,8 +1,7 @@
 package com.example.foodiemp5app;
 
-
-
-public class MealItem {
+public class MealItem
+{
     String title;
     String description;
     int imageId;

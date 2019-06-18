@@ -22,7 +22,8 @@ import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class MealItemAdapter extends
-            RecyclerView.Adapter<MealItemAdapter.MealViewHolder>  {
+            RecyclerView.Adapter<MealItemAdapter.MealViewHolder>
+{
 
         private Context context;
         private ArrayList<MealItem> meals;
@@ -34,7 +35,8 @@ public class MealItemAdapter extends
 
             final MealItemAdapter mAdapter;
 
-            public MealViewHolder(View itemView, MealItemAdapter adapter) {
+            public MealViewHolder(View itemView, MealItemAdapter adapter)
+            {
                 super(itemView);
                 mealTitleView = itemView.findViewById(R.id.food_title);
                 mealDescription = itemView.findViewById(R.id.food_desc);
@@ -42,9 +44,11 @@ public class MealItemAdapter extends
                 this.mAdapter = adapter;
                 itemView.setOnClickListener(this);
 
-                itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                itemView.setOnLongClickListener(new View.OnLongClickListener()
+                {
                     @Override
-                    public boolean onLongClick(View view) {
+                    public boolean onLongClick(View view)
+                    {
                         final int p=getLayoutPosition();
 
                         final AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
@@ -54,32 +58,32 @@ public class MealItemAdapter extends
                         alertDialog.setMessage(R.string.delete_meal_dialog);
 
                         alertDialog.setPositiveButton("No", new
-                                DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
+                                DialogInterface.OnClickListener()
+                                {
+                                    public void onClick(DialogInterface dialog, int which)
+                                    {
                                         // User clicked OK button.
                                         // ... Action to take when OK is clicked.
                                     }
                                 });
                         alertDialog.setNegativeButton("Delete", new
-                                DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
+                                DialogInterface.OnClickListener()
+                                {
+                                    public void onClick(DialogInterface dialog, int which)
+                                    {
                                         meals.remove(p);
                                         notifyDataSetChanged();
                                     }
                                 });
-
-
                         alertDialog.show();
                         return true;// returning true instead of false, works for me
                     }
                 });
             }
 
-
-
-
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
 
                 int mPosition = getLayoutPosition();
 
@@ -105,35 +109,37 @@ public class MealItemAdapter extends
                 mAdapter.notifyDataSetChanged();
             }
 
-            public void setDetails(MealItem meal) {
+            public void setDetails(MealItem meal)
+            {
                 mealTitleView.setText(meal.getTitle());
                 mealDescription.setText(meal.getDescription());
                 foodImage.setImageResource(meal.getImageId());
             }
         }
 
-        public MealItemAdapter(Context context, ArrayList<MealItem> meals) {
+        public MealItemAdapter(Context context, ArrayList<MealItem> meals)
+        {
             this.context = context;
             this.meals = meals;
         }
 
         @Override
-        public MealViewHolder onCreateViewHolder(ViewGroup parent,
-                                                                 int viewType) {
+        public MealViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+        {
             View view = LayoutInflater.from(context).inflate(R.layout.meal_item, parent, false);
             return new MealViewHolder(view, this);
         }
 
         @Override
-        public void onBindViewHolder(MealViewHolder holder,
-                                     int position) {
+        public void onBindViewHolder(MealViewHolder holder, int position)
+        {
             MealItem meal = meals.get(position);
             holder.setDetails(meal);
         }
 
         @Override
-        public int getItemCount() {
+        public int getItemCount()
+        {
             return meals.size();
         }
     }
-
