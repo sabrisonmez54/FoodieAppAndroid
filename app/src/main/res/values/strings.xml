@@ -5,6 +5,7 @@
     <string name="food_desc">breakfast</string>
     <string name="food_title">donutss</string>
     <string name="donut">donut</string>
+    <string name="meal_dialog">Do you want to delete meal?</string>
 
     <array name="sports_images">
         <item>@drawable/donut_circle</item>
