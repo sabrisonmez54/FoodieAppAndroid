@@ -49,9 +49,9 @@ public class MealItemAdapter extends
 
                         final AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
 
-                        alertDialog.setTitle("Info");
+                        alertDialog.setTitle("Alert");
 
-                        alertDialog.setMessage(R.string.meal_dialog);
+                        alertDialog.setMessage(R.string.delete_meal_dialog);
 
                         alertDialog.setPositiveButton("No", new
                                 DialogInterface.OnClickListener() {
