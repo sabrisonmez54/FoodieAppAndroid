@@ -14,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/donut_circle"
-        android:transitionName="imageTransition"/>
+        android:transitionName="imageTransition"
+        android:background="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/meal_activity_title"

@@ -84,7 +84,6 @@ public class MealItemAdapter extends
             @Override
             public void onClick(View view)
             {
-
                 int mPosition = getLayoutPosition();
 
                 String element = meals.get(mPosition).title;
@@ -99,22 +98,21 @@ public class MealItemAdapter extends
                 Intent intent = new Intent(context , MealItemActivity.class);
                 intent.putExtra("title", mealTitleView.getText());
                 intent.putExtra("description", mealDescription.getText());
-
+                intent.putExtra("imageId", meals.get(mPosition).getImageId());
 
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context, pairs);
-
 
                 context.startActivity(intent, options.toBundle());
 
                 mAdapter.notifyDataSetChanged();
             }
-
             public void setDetails(MealItem meal)
             {
                 mealTitleView.setText(meal.getTitle());
                 mealDescription.setText(meal.getDescription());
                 foodImage.setImageResource(meal.getImageId());
             }
+
         }
 
         public MealItemAdapter(Context context, ArrayList<MealItem> meals)

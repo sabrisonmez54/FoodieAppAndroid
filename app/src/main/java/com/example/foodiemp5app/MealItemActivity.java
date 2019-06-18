@@ -42,6 +42,7 @@ public class MealItemActivity extends AppCompatActivity
         int mId = intent.getIntExtra("imageId", 0);
         title.setText(mTitle);
         description.setText(mDesc);
+        image.setImageResource(mId);
     }
 }
 
