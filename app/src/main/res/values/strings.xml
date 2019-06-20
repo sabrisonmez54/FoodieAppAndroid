@@ -1,12 +1,14 @@
 <resources>
     <string name="app_name">FoodieMP5app</string>
     <string name="action_settings">Settings</string>
+    <string name="action_home">I am home</string>
     <string name="title_activity_meal_item">MealItemActivity</string>
     <string name="food_desc">breakfast</string>
     <string name="food_title">donutss</string>
     <string name="donut">donut</string>
     <string name="delete_meal_dialog">Do you want to delete a meal?</string>
     <string name="add_meal_dialog">Enter name and description</string>
+    <string name="choose_image">Choose Image</string>
 
     <array name="sports_images">
         <item>@drawable/donut_circle</item>
